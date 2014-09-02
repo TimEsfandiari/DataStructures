@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     int count;
 
     Team* teamA = new Team();
+    int rosterSizeA = 1;
 
     if(inputA.is_open())
     {
@@ -32,7 +33,12 @@ int main(int argc, char *argv[])
 
         inputA >> i;
         teamA->setRosterSize(i);
-        teamA->getRosterSize();
+
+
+
+        rosterSizeA = teamA->getRosterSize();
+
+        Player rosterA[rosterSizeA] = new Player();
 
         count = 0;
         while (count < teamA->getRosterSize() && !inputA.eof())
@@ -40,8 +46,12 @@ int main(int argc, char *argv[])
             inputA >> i;
             getline(inputA, line);
 
-            teamA->addPlayer(i, line);
+            rosterA[count].setID(i);
+            rosterA[count].setName(line);
+            rosterA[count].setTeam(teamA->getTeamName());
         }
+
+        Player rosterA[teamA->getRosterSize()];
 
 
     }
