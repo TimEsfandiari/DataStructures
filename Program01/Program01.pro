@@ -3,16 +3,17 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += \
-    Team.cpp \
+
+SOURCES += main.cpp \
     Player.cpp \
-    Match.cpp \
-    Tag.cpp \
-    Main.cpp
+    Team.cpp \
+    Tag.cpp
+
+include(deployment.pri)
+qtcAddDeployment()
 
 HEADERS += \
-    Team.h \
     Player.h \
-    Match.h \
+    Team.h \
     Tag.h
 

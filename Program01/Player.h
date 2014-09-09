@@ -2,25 +2,37 @@
 #define PLAYER_H
 
 #include <iostream>
-#include <string>
+#include <fstream>
+#include <cstring>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+
+#include "Tag.h"
 
 using namespace std;
 
 class Player
 {
 private:
+    vector<Tag*> tags;
     int id;
-    string name;
-    string team;
+    char* name;
+    char* team;
 public:
     Player();
-    Player(int id, string& name, string& team);
+    Player(int id, char* name, char* team);
     void setID(int i);
-    int getID();
-    void setName(string& c);
-    string getName();
-    void setTeam(string& c);
-    string getTeam();
+    int getID() const;
+    void setName(char* c);
+    char* getName() const;
+    void setTeam(char* c);
+    char* getTeam() const;
+    void addTag(Tag* tag);
+    const vector<Tag*>& getTags() const;
+    int getPointsScored() const;
+    int getNumTags();
+
 
 };
 

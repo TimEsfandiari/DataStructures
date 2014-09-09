@@ -2,23 +2,30 @@
 #define TAG_H
 
 #include <iostream>
-#include <string>
+#include <fstream>
+#include <cstring>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+
+class Player;
 
 using namespace std;
 
 class Tag
 {
 private:
-    int tagger;
-    int target;
+    const Player* tagger;
+    const Player* target;
     int time;
     int hitBox;
 public:
     Tag();
-    void setTagger(int i);
-    int getTagger();
-    void setTarget(int i);
-    int getTarget();
+    Tag(const Player* tgr, const Player* trgt, int clock, int hit);
+    void setTagger(const Player* i);
+    const Player* getTagger();
+    void setTarget(const Player* i);
+    const Player* getTarget();
     void setTime(int i);
     int getTime();
     void setHitBox(int i);

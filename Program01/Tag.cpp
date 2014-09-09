@@ -3,22 +3,29 @@
 Tag::Tag()
 {
 }
-void Tag::setTagger(int i)
+Tag::Tag(const Player* tgr, const Player* trgt, int clock, int hit)
+{
+    tagger = tgr;
+    target = trgt;
+    time = clock;
+    hitBox = hit;
+}
+void Tag::setTagger(const Player* i)
 {
     tagger = i;
 }
 
-int Tag::getTagger()
+const Player* Tag::getTagger()
 {
     return tagger;
 }
 
-void Tag::setTarget(int i)
+void Tag::setTarget(const Player* i)
 {
     target = i;
 }
 
-int Tag::getTarget()
+const Player* Tag::getTarget()
 {
     return target;
 }
